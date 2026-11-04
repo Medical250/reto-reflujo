@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>30 días para entender tu reflujo | Dr. Óscar Palma</title>
+<meta name="description" content="Un reto de 30 días con el Dr. Óscar Palma: una explicación breve y una actividad de minutos al día para entender tu reflujo y llegar a consulta con tus preguntas organizadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Colores de la marca del Dr. Palma (logo) */
+  --yellow:#FECC20; --orange:#FFA207; --mint:#55D5A3; --green:#00B674;
+  --bg:#F3FAF6; --surface:#FFFFFF; --ink:#10302A; --ink2:#46625A; --line:#D2E6DC;
+  --accent:#007A52; --accent-ink:#FFFFFF; --accent-soft:#DDF5EA; --on-brand:#10302A;
+  --alert:#B3361F; --alert-soft:#FBE8E2;
+  --display:'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body:'Atkinson Hyperlegible', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0E201B; --surface:#15302A; --ink:#E5F3EC; --ink2:#A7C4B8; --line:#285044;
+    --accent:#55D5A3; --accent-ink:#0E201B; --accent-soft:#1B3D33;
+    --alert:#F39A84; --alert-soft:#3D241D;
+    color-scheme: dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+
+/* Encabezado */
+header{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;font-family:var(--display);font-weight:600;font-size:1.05rem;text-decoration:none}
+.brand img{width:46px;height:46px;border-radius:50%;background:#fff;object-fit:contain;padding:3px}
+.brand small{display:block;font-family:var(--body);font-weight:400;font-size:.8rem;color:var(--ink2)}
+.head-cita{font-size:.92rem;font-weight:700;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+/* Portada */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:start;padding:2.5rem 0 3rem}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,6.5vw,4.6rem);line-height:.98;letter-spacing:-.02em;max-width:12ch}
+.lead{margin-top:1.4rem;max-width:46ch;color:var(--ink2);font-size:1.15rem}
+.how{margin-top:1.8rem;display:grid;gap:.7rem;max-width:46ch}
+.how li{list-style:none;display:grid;grid-template-columns:2rem 1fr;gap:.6rem;align-items:baseline}
+.how b{font-family:var(--display);font-size:1.4rem;color:var(--accent)}
+.stagebar{display:grid;grid-template-columns:7fr 7fr 7fr 9fr;gap:4px;margin-top:1.6rem;max-width:30rem}
+.stagebar span{height:8px;border-radius:4px;background:var(--c)}
+
+.join{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+.join h2{font-family:var(--display);font-weight:600;font-size:1.45rem;line-height:1.2;margin-bottom:.4rem}
+.join p.sub{color:var(--ink2);font-size:.95rem;margin-bottom:1.2rem}
+label.f{display:block;font-weight:700;font-size:.92rem;margin:.9rem 0 .35rem}
+input[type=text],input[type=tel],input[type=time],textarea,select{
+  width:100%;padding:.75rem .85rem;border:1.5px solid var(--line);border-radius:8px;background:var(--bg)}
+textarea{min-height:3.2rem;resize:vertical;line-height:1.45}
+.check{display:grid;grid-template-columns:1.3rem 1fr;gap:.6rem;margin-top:1rem;font-size:.88rem;color:var(--ink2)}
+.check input{width:1.2rem;height:1.2rem;margin-top:.2rem;accent-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:999px;
+  background:var(--accent);color:var(--accent-ink);font-weight:700;padding:.85rem 1.5rem;cursor:pointer;text-decoration:none}
+.btn.full{width:100%;margin-top:1.3rem}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.err{color:var(--alert);font-size:.9rem;margin-top:.7rem;min-height:1.2em}
+
+.ticks{display:grid;grid-template-columns:repeat(30,1fr);gap:3px;margin:1.1rem 0 .5rem}
+.ticks span{height:22px;border-radius:3px;background:var(--line)}
+.ticks span.on{background:var(--c,var(--green))}
+.count{font-family:var(--display);font-size:2.6rem;font-weight:800;line-height:1}
+.count small{font-family:var(--body);font-size:1rem;font-weight:400;color:var(--ink2)}
+
+/* Señales de alerta */
+.safety{background:var(--alert-soft);border-left:5px solid var(--alert);border-radius:10px;padding:1.1rem 1.3rem;margin-bottom:3rem}
+.safety strong{color:var(--alert)}
+.safety p{font-size:.98rem}
+.safety p+p{margin-top:.4rem}
+
+/* Calendario */
+.cal-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.cal-head h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.05}
+.cal-head p{color:var(--ink2);max-width:40ch;font-size:.95rem}
+.stage{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.stage h3{font-family:var(--display);font-weight:600;font-size:1.2rem;line-height:1.2;padding-left:.8rem;border-left:6px solid var(--c)}
+.stage .range{color:var(--ink2);font-size:.88rem;margin-top:.25rem}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:.6rem}
+.day{position:relative;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:10px;
+  padding:.65rem .7rem .75rem;cursor:pointer;min-height:104px;display:flex;flex-direction:column;gap:.3rem}
+.day .n{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1}
+.day .t{font-size:.82rem;line-height:1.3;color:var(--ink2)}
+.day.done{background:var(--c);border-color:var(--c)}
+.day.done .n,.day.done .t{color:var(--on-brand)}
+.day.done::after{content:"✓";position:absolute;top:.5rem;right:.65rem;font-weight:700;color:var(--on-brand)}
+.day.next{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.day.next::after{content:"Sigue aquí";position:absolute;top:.6rem;right:.6rem;font-size:.68rem;font-weight:700;color:var(--accent)}
+.day.alert:not(.done){border-color:var(--alert)}
+
+.ficha-bar{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.5rem;margin:2.5rem 0}
+.ficha-bar h2{font-family:var(--display);font-weight:600;font-size:1.3rem}
+.ficha-bar p{color:var(--ink2);font-size:.92rem;max-width:48ch}
+.ficha-bar .acts{display:flex;gap:.6rem;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--ink2);font-size:.88rem;display:grid;gap:.8rem}
+.tip{display:none;background:var(--accent-soft);border-radius:10px;padding:.8rem 1rem;font-size:.9rem;margin-bottom:1.5rem}
+
+/* Panel del día */
+dialog{border:0;padding:0;background:var(--surface);color:var(--ink);width:min(640px,100%);max-height:92vh;
+  border-radius:16px;margin:auto}
+dialog::backdrop{background:rgba(10,25,28,.55)}
+.dlg{padding:1.6rem 1.6rem 1.4rem;overflow:auto;max-height:92vh}
+.dlg-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;color:var(--ink2);font-size:.9rem}
+.x{background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:var(--ink2);padding:.2rem .4rem}
+.dlg h2{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1.1;margin-bottom:.9rem}
+.explain{font-size:1.05rem;line-height:1.7}
+.task{margin-top:1.4rem;padding-top:1.2rem;border-top:1px dashed var(--line)}
+.task h3{font-family:var(--display);font-weight:600;font-size:1.1rem}
+.hint{font-size:.88rem;color:var(--ink2);margin-top:.4rem}
+.recall{background:var(--bg);border-radius:8px;padding:.7rem .9rem;margin-top:.8rem;font-size:.95rem}
+.reveal{margin-top:.8rem;font-size:.95rem;background:var(--accent-soft);border-radius:8px;padding:.7rem .9rem;display:none}
+.reveal.show{display:block}
+.linkbtn{background:none;border:0;color:var(--accent);font-weight:700;cursor:pointer;margin-top:.7rem;text-decoration:underline;text-underline-offset:3px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;align-items:center;margin-top:.7rem}
+.mark{font-size:.85rem;font-weight:700;margin-top:.3rem}
+.ok{color:var(--accent)} .no{color:var(--alert)}
+.q{margin-top:.9rem}
+.yn{display:flex;gap:.5rem;margin-top:.4rem}
+.yn button{border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:.4rem 1.1rem;cursor:pointer}
+.yn button[aria-pressed=true]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.interval{font-family:var(--display);font-size:1.4rem;font-weight:600;margin-top:.8rem}
+.dlg-foot{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
+.saved{font-size:.85rem;color:var(--ink2);margin-top:.8rem;min-height:1.3em}
+.saved.on{color:var(--accent);font-weight:700}
+.alertbox{background:var(--alert-soft);border-left:4px solid var(--alert);padding:.7rem .9rem;border-radius:8px;margin-top:.8rem;font-size:.92rem}
+
+/* Ficha imprimible */
+#ficha{display:none}
+@media print{
+  body{background:#fff;color:#000}
+  body>*:not(#ficha){display:none!important}
+  #ficha{display:block;padding:1cm;font-size:11pt}
+  @page{margin:1.4cm 1.4cm 1.8cm}
+  #ficha{padding:0;font-size:10.5pt;color:#10302A}
+  #ficha .fh{display:flex;align-items:center;gap:12pt;margin-bottom:10pt}
+  #ficha .fh img{width:46pt;height:46pt}
+  #ficha h1{font-size:20pt;max-width:none;line-height:1.1}
+  #ficha .fh p{color:#46625A;font-size:10pt}
+  #ficha h2{font-size:11.5pt;margin:14pt 0 6pt;padding:4pt 8pt;border-radius:4pt;background:var(--c);color:#10302A;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;break-after:avoid}
+  #ficha dt{font-weight:700;margin-top:7pt;font-size:9.5pt;color:#46625A;break-after:avoid}
+  #ficha dd{margin-left:0;min-height:16pt;padding:2pt 0 3pt;border-bottom:1px solid #D2E6DC;break-inside:avoid}
+  #ficha .safe{margin-top:14pt;padding:6pt 8pt;border-left:3pt solid #B3361F;font-size:9pt;break-inside:avoid}
+}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding-top:1.2rem}
+  .stage{grid-template-columns:1fr;gap:.8rem}
+  dialog{margin:auto 0 0;border-radius:16px 16px 0 0;max-height:94vh}
+  .dlg{padding-bottom:calc(1.4rem + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:420px){ .days{grid-template-columns:repeat(2,1fr)} .row{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:no-preference){
+  .day{transition:background .2s,border-color .2s}
+  .ticks span{transition:background .3s}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="brand" href="#"><img src="data:image/png;base64,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" alt="" width="46" height="46"><span>Dr. Óscar Palma<small>Cirugía digestiva y endoscopía</small></span></a>
+    <a class="head-cita" id="citaHead" href="#" target="_blank" rel="noopener">Pedir una cita</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>30 días para entender tu reflujo</h1>
+      <div class="stagebar" aria-hidden="true"><span style="--c:var(--yellow)"></span><span style="--c:var(--orange)"></span><span style="--c:var(--mint)"></span><span style="--c:var(--green)"></span></div>
+      <p class="lead">Cada día, una explicación sencilla del Dr. Óscar Palma y una actividad de unos minutos. Al terminar tendrás lo que has observado y tus preguntas listas para consulta.</p>
+      <ul class="how">
+        <li><b>1</b><span>Únete con tu nombre y tu WhatsApp.</span></li>
+        <li><b>2</b><span>Abre el día que toca en el calendario y haz la actividad.</span></li>
+        <li><b>3</b><span>Marca el día como completado y guarda tu ficha al final.</span></li>
+      </ul>
+    </div>
+
+    <div class="join" id="join" aria-live="polite"></div>
+  </section>
+
+  <div class="tip" id="tip">Abriste el reto dentro de Instagram. Tu avance se guarda en este navegador, así que vuelve siempre por el mismo enlace. Al final, envíate tu ficha por WhatsApp para no perderla.</div>
+
+  <aside class="safety" role="note">
+    <p><strong>No esperes al final del reto si necesitas atención.</strong> Ante dolor de pecho nuevo o intenso, vómito con sangre o heces negras y pegajosas, busca atención de urgencia.</p>
+    <p>Ante dificultad para tragar, vómitos persistentes o pérdida de peso sin proponértelo, pide una valoración pronta.</p>
+  </aside>
+
+  <section aria-labelledby="calTitle">
+    <div class="cal-head">
+      <h2 id="calTitle">Tu calendario</h2>
+      <p>Todos los días están abiertos. Puedes ir a tu ritmo y volver a cualquier día cuando quieras.</p>
+    </div>
+    <div id="calendar"></div>
+  </section>
+
+  <section class="ficha-bar">
+    <div>
+      <h2>Tu ficha del reto</h2>
+      <p>Lo que escribes en cada día se guarda solo en este teléfono. Envíate tus respuestas por WhatsApp para tenerlas siempre. Si prefieres llenarla en la computadora o en papel, descarga la ficha en PDF.</p>
+    </div>
+    <div class="acts">
+      <button class="btn" id="waBtn" type="button">Enviármela por WhatsApp</button>
+      <a class="btn ghost" href="ficha-reflujo-dr-palma.pdf" target="_blank" rel="noopener" download>Descargar ficha en PDF</a>
+    </div>
+    <p class="hint" id="pdfTip" hidden>Para descargar el PDF desde Instagram, toca los tres puntos de arriba y elige «Abrir en el navegador».</p>
+  </section>
+
+  <footer>
+    <p>Este reto es educativo. No da un diagnóstico ni sustituye una consulta médica. Los ejemplos de pacientes son ficticios.</p>
+    <p>Tus notas se quedan en este teléfono. Al equipo del doctor solo llegan tu nombre, tu WhatsApp y los días que marcas como completados.</p>
+    <p><a class="btn ghost" id="citaFoot" href="#" target="_blank" rel="noopener">Pedir una cita</a></p>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg" id="dlgBody"></div>
+</dialog>
+
+<div id="ficha"></div>
+
+<script>
+/* ───────── CONFIGURACIÓN ─────────
+   endpoint: pega aquí la URL de la aplicación web de Google Apps Script (ver LEEME.md).
+   Mientras esté vacío, el reto funciona igual pero no envía registros. */
+const CONFIG = {
+  endpoint: "",
+  cita: "https://api.whatsapp.com/send?phone=50249203688&text=" +
+        encodeURIComponent("Hola, participé en el reto «30 días para entender tu reflujo» y quiero agendar una cita con el Dr. Palma."),
+  storageKey: "reflujo30_v1"
+};
+
+const STAGES = [
+  {name:"Comprendo los conceptos", from:1, to:7, c:"var(--yellow)"},
+  {name:"Observo mi experiencia", from:8, to:14, c:"var(--orange)"},
+  {name:"Reviso mi rutina", from:15, to:21, c:"var(--mint)"},
+  {name:"Preparo mis preguntas", from:22, to:30, c:"var(--green)"}
+];
+
+const DAYS = [
+ {t:"Empieza tu reto", x:"Durante 30 días encontrarás un tema explicado por el Dr. Óscar Palma y una actividad de unos minutos. Al terminar tendrás un registro de lo que has observado y tus preguntas organizadas para consulta. El reto no da un diagnóstico ni sustituye una consulta.", a:{type:"text", fields:["Una duda que tengo sobre mi reflujo","Al terminar quiero entender…"]}},
+ {t:"Qué ocurre cuando hay reflujo", x:"El reflujo ocurre cuando el contenido del estómago vuelve hacia el esófago, el tubo que conecta la boca con el estómago.", a:{type:"text", fields:["Completa en tus palabras: hay reflujo cuando…"], ref:"El contenido del estómago vuelve al esófago."}},
+ {t:"Acidez y reflujo", x:"Solemos usar las dos palabras como si fueran iguales, pero describen cosas distintas. La acidez es una sensación de ardor. El reflujo es el regreso del contenido del estómago hacia el esófago; puede llegar a la garganta o a la boca y dejar un sabor agrio. Distinguir qué sientes ayuda a explicarlo, aunque no basta para hacer un diagnóstico.", a:{type:"match", opts:["Acidez","Reflujo"], pairs:[["Ardor","Acidez"],["Regreso de contenido","Reflujo"]]}},
+ {t:"Cómo describir lo que sientes", x:"Empieza con tus palabras: ¿ardor, sabor agrio u otra sensación? Después añade dónde lo notas. Ejemplo ficticio: «Siento ardor detrás del pecho después de cenar».", a:{type:"text", fields:["Siento… en…"], hint:"Si no tienes molestias, describe lo que te gustaría poder reconocer."}},
+ {t:"Cuándo buscar atención", alert:true, x:"Un dolor de pecho nuevo o intenso no debe darse por hecho que sea acidez: busca atención de urgencia. También ante vómito con sangre o heces negras y pegajosas. Si te cuesta tragar, tienes vómitos persistentes o pierdes peso sin proponértelo, pide una valoración pronta. Estas señales requieren atención aunque estés participando en el reto.", a:{type:"match", opts:["Urgencias","Valoración pronta"], pairs:[["Vómito con sangre","Urgencias"],["Dificultad para tragar","Valoración pronta"]], note:"Si algo de esto te está ocurriendo, prioriza la atención antes que la actividad."}},
+ {t:"Desde cuándo te pasa", x:"Puedes responder con una referencia aproximada. Ejemplo: «Lo noté por primera vez hace unos meses». Si no lo recuerdas, también es un dato válido.", a:{type:"text", fields:["Lo noté por primera vez…"], hint:"Puedes escribir «no recuerdo»."}},
+ {t:"Tu primera semana", x:"Repasa lo que viste esta semana. Contesta antes de ver las respuestas.", a:{type:"quiz", qs:[
+   {q:"¿Acidez significa ardor?", a:true, e:"La acidez describe una sensación de ardor."},
+   {q:"¿Reflujo significa regreso de contenido?", a:true, e:"Es el regreso del contenido del estómago al esófago."},
+   {q:"¿Vómito con sangre requiere atención inmediata?", a:true, e:"Es una señal para buscar atención de urgencia."}], fields:["Aprendí que…"]}},
+ {t:"Cuándo aparece", x:"«Me pasa a cada rato» no basta para entender tus molestias. Empieza con una ocasión que recuerdes: qué sentiste, a qué hora fue y qué estabas haciendo. Ejemplo ficticio: «Anoche, después de cenar, noté ardor al acostarme». Ese dato ayuda a conversar sobre tu experiencia; por sí solo no demuestra qué lo causó.", a:{type:"text", fields:["Fecha aproximada","Momento del día","Qué estaba haciendo"], hint:"Si no recuerdas un episodio, practica con un ejemplo ficticio."}},
+ {t:"Qué significa a cada rato", x:"No es lo mismo dos veces al mes que dos veces cada noche. Ejemplo ficticio: «Lo noté dos noches esta semana». Si el dato es aproximado, dilo.", a:{type:"text", fields:["Últimamente lo he notado…"], hint:"Usa «aproximadamente» si corresponde."}},
+ {t:"Cómo afecta tu día", x:"No es igual notar ardor y seguir con tu día que tener que parar una actividad o perder el descanso. Explicar ese impacto ayuda al médico a entender cómo lo estás viviendo. Puedes decir: «Me costó concentrarme», «Dejé de hacer algo» o «No cambió mi actividad».", a:{type:"text", fields:["Cuando me pasa…"]}},
+ {t:"Una nota útil en una línea", x:"Una buena nota une tres datos: cuándo, qué sentiste y cómo te afectó. Ejemplo ficticio: «El martes, después de cenar, noté ardor y me costó descansar».", a:{type:"text", fields:["Mi nota en una línea"], hint:"Une lo que escribiste en los días 8 a 10. Si falta un dato, indica que no lo recuerdas."}},
+ {t:"Cuando interrumpe tu descanso", x:"Que la molestia empiece al acostarte o que te despierte a mitad de la noche son dos momentos distintos que conviene contar. Explica si aún estabas despierto, si interrumpió tu sueño y cuántas noches lo has notado. Ese registro no confirma por sí solo que sea reflujo, pero te ayuda a describirlo. Si se repite o afecta tu descanso, coméntalo con tu médico.", a:{type:"text", fields:["Por la noche…"], hint:"Escribe si ocurrió al acostarte, si te despertó o si no lo has notado por la noche."}},
+ {t:"Observación y suposición", x:"«Sentí ardor después del café» cuenta algo que observaste. «El café es la causa de todo» afirma una explicación. Lo observado es un dato; lo supuesto conviene llevarlo a consulta como pregunta.", a:{type:"text", fields:["Convierte «El café es la causa de todo» en una pregunta","Ahora hazlo con una suposición tuya"], ref:"«¿Puede influir el café en lo que siento?»"}},
+ {t:"Tu resumen de observación", x:"Reúne en dos frases lo que observaste en esta etapa.", a:{type:"text", fields:["Lo he notado cuando…","Me afecta así…"], hint:"Puedes usar un ejemplo ficticio si participas para aprender."}},
+ {t:"Tus dudas sobre comida y bebida", x:"Algunos alimentos y bebidas pueden empeorar las molestias en algunas personas, pero eso no significa que todos te afecten igual. Antes de ampliar tu lista de prohibidos, observa qué tomaste, cuándo apareció la molestia y si se repite. Sentir ardor una vez después del café no demuestra que sea la causa. Lleva tus observaciones a consulta para revisar qué cambios tienen sentido en tu caso.", a:{type:"text", fields:["Mi pregunta sobre alimentación","El dato que me llevó a hacerla"]}},
+ {t:"Tus horarios habituales", x:"Anota a qué horas sueles comer y beber en un día habitual. No hace falta cambiar tu rutina para completar la actividad.", a:{type:"text", fields:["Desayuno","Almuerzo","Cena","Otras comidas o bebidas"]}},
+ {t:"Cuánto pasa entre cenar y acostarte", x:"Si tienes molestias por la noche o al estar acostado, comer al menos tres horas antes de ir a la cama puede ayudar. Ejemplo: si terminas de cenar a las ocho y te acuestas a las diez, han pasado dos horas. Empieza por conocer tu intervalo habitual y conversa con tu médico sobre cómo ajustar esta medida a tu caso.", a:{type:"interval", fields:["Lo que quisiera preguntar sobre mi horario"]}},
+ {t:"Tu rutina en una página", x:"Reúne tres cosas: tus horarios, lo que has observado y lo que aún no entiendes. Después elige una pregunta, por ejemplo: «¿Qué cambio sería razonable valorar en mi caso?».", a:{type:"text", fields:["Mi duda sobre la rutina","El dato que la acompaña"]}},
+ {t:"Lo que ya probaste", x:"Anota cada producto o medida que hayas probado: cómo lo usaste, durante cuánto tiempo y qué notaste después. Si puedes, lleva una foto del envase a consulta. Si sigues un tratamiento indicado, consulta con tu médico antes de cambiarlo.", a:{type:"text", long:true, fields:["Lo que he probado, quién lo indicó y qué noté"], hint:"Si no has usado nada, escríbelo."}},
+ {t:"Cómo revisar un consejo de redes", x:"Ante un «le funciona a todos», pregunta quién lo dice, qué evidencia ofrece y a quién puede aplicarse.", a:{type:"text", fields:["Un consejo que he escuchado","Mi pregunta para consulta sobre ese consejo"], ref:"Ejemplo: «¿Qué evidencia hay y qué riesgos tendría este producto en mi caso?»"}},
+ {t:"Una pregunta que sí llevarías", x:"Elige la pregunta que no quieres olvidar en consulta y añade el dato de tu experiencia que le da contexto. Ejemplo: «Con estos horarios y estas molestias, ¿qué conviene revisar?».", a:{type:"text", fields:["Mi pregunta","El dato que le da contexto"]}},
+ {t:"Cómo empieza una valoración", x:"La valoración suele empezar escuchándote: qué sientes, desde cuándo, con qué frecuencia y qué has probado. Con tu historia clínica, el médico decide si recomienda un tratamiento o si hace falta algún estudio. Los estudios pueden indicarse, por ejemplo, si hay señales de complicaciones, dudas sobre otra causa o síntomas que no mejoran con el tratamiento.", a:{type:"text", fields:["Qué siento","Desde cuándo y con qué frecuencia","Qué he probado"], hint:"Si desconoces algún dato, indícalo."}},
+ {t:"Qué puede mostrar una endoscopía", x:"La endoscopía permite observar por dentro el esófago, el estómago y el duodeno. Su indicación depende de la valoración de cada persona.", a:{type:"text", fields:["Mi pregunta si me recomiendan una endoscopía"], ref:"«¿Qué busca aclarar este estudio en mi caso?»"}},
+ {t:"Qué es una medición de pH", x:"La endoscopía y la medición de pH no responden a la misma pregunta. La endoscopía permite observar el interior del esófago, el estómago y el duodeno. La medición de pH registra la exposición del esófago al ácido durante un periodo. No todas las personas necesitan las mismas pruebas.", a:{type:"match", opts:["Observar el interior","Medir la exposición al ácido"], pairs:[["Endoscopía","Observar el interior"],["Medición de pH","Medir la exposición al ácido"]]}},
+ {t:"Qué preguntar sobre un tratamiento", x:"Tres preguntas para salir de consulta con las dudas resueltas: ¿qué objetivo tiene el tratamiento que me propone?, ¿cómo y durante cuánto tiempo debo seguirlo?, ¿cuándo revisaremos cómo me ha ido? Añade una cuarta: ¿qué hago si tengo una duda o una reacción?", a:{type:"text", long:true, fields:["Las preguntas que quiero llevar"]}},
+ {t:"Cómo contar qué te ayudó", x:"Para valorar cómo te va, compara la misma molestia en periodos parecidos. Ejemplo ficticio: «Antes me despertaba tres noches por semana; esta semana me pasó una». También puedes describir la intensidad o cómo afectó tus actividades. Es una observación útil, aunque no demuestra por sí sola qué produjo el cambio.", a:{type:"text", fields:["Antes… ahora…"], hint:"Si no has probado nada, prepara la pregunta «¿Cómo sabremos si el plan está ayudando?»."}},
+ {t:"Tu historia en tres frases", x:"Une sensación, momento e impacto, y una pregunta. Ejemplo ficticio: «Siento ardor. Lo noté dos noches al acostarme y una me despertó. Quiero saber qué conviene valorar». Léelas en voz alta.", a:{type:"text", fields:["Lo que siento","Cuándo y cómo me afecta","Lo que quiero saber"]}},
+ {t:"Vuelve a tu primera duda", x:"Compara lo que escribiste el día 1 con lo que entiendes hoy.", a:{type:"text", recall:"d1_0", fields:["Ahora entiendo…","Todavía quiero preguntar…"]}},
+ {t:"Comprueba lo aprendido", x:"Cinco preguntas sobre lo que significa reflujo, qué observar y cómo prepararte para consulta. Contesta antes de ver las respuestas.", a:{type:"quiz", qs:[
+   {q:"¿Reflujo es el regreso de contenido del estómago?", a:true, e:"Reflujo describe el regreso del contenido del estómago al esófago."},
+   {q:"¿«Ardor» describe una sensación?", a:true, e:"Ardor expresa lo que una persona siente."},
+   {q:"¿Un episodio después de un alimento demuestra la causa?", a:false, e:"Una observación aislada no demuestra una causa. Anótala como dato y llévala como pregunta."},
+   {q:"¿Una lista de lo que probaste ayuda a conversar en consulta?", a:true, e:"Ayuda a explicar lo que ya probaste y qué ocurrió después."},
+   {q:"¿Debes esperar al día 30 si necesitas atención?", a:false, e:"Puedes buscar atención cuando la necesites. Las señales del día 5 están disponibles desde el inicio."}]}},
+ {t:"Tu siguiente paso", x:"Llegaste al día 30. Reúne lo que aprendiste y guarda tus preguntas. Tu ficha y el calendario siguen disponibles para repasar cuando quieras.", a:{type:"text", fields:["Mi siguiente paso será…"], cita:true}}
+];
+
+/* ───────── Estado (guardado en este navegador) ───────── */
+const blank = () => ({user:null, done:[], notes:{}});
+function load(){ try{ const s = localStorage.getItem(CONFIG.storageKey); return s ? Object.assign(blank(), JSON.parse(s)) : blank(); }catch(e){ return blank(); } }
+let state = load();
+function save(){ try{ localStorage.setItem(CONFIG.storageKey, JSON.stringify(state)); }catch(e){} }
+
+function send(data){
+  if(!CONFIG.endpoint) return;
+  try{ fetch(CONFIG.endpoint,{method:"POST",mode:"no-cors",body:new URLSearchParams(data)}).catch(()=>{}); }catch(e){}
+}
+const newId = () => (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const el = (tag, attrs={}, text) => { const n=document.createElement(tag); for(const k in attrs){ if(k==="class") n.className=attrs[k]; else n.setAttribute(k,attrs[k]); } if(text!=null) n.textContent=text; return n; };
+const stageOf = d => STAGES.find(s => d>=s.from && d<=s.to);
+const nextDay = () => { for(let i=1;i<=30;i++) if(!state.done.includes(i)) return i; return 30; };
+
+/* ───────── Registro ───────── */
+function renderJoin(){
+  const box = document.getElementById("join");
+  box.innerHTML = "";
+  if(!state.user){
+    box.append(el("h2",{},"Únete al reto"), el("p",{class:"sub"},"Es gratis. Con tu registro puedes marcar cada día y el equipo del doctor sabrá que participas."));
+    const form = el("form",{novalidate:""});
+    form.innerHTML = `
+      <label class="f" for="nombre">Tu nombre</label>
+      <input id="nombre" type="text" autocomplete="given-name" required>
+      <label class="f" for="wa">Tu WhatsApp</label>
+      <input id="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="5555 5555" required>
+      <label class="check"><input id="ok" type="checkbox"><span>Acepto que el equipo del Dr. Óscar Palma me escriba por WhatsApp sobre el reto. Mis notas se quedan en mi teléfono.</span></label>
+      <button class="btn full" type="submit">Unirme al reto</button>
+      <p class="err" id="err" role="alert"></p>`;
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const nombre = form.querySelector("#nombre").value.trim();
+      const wa = form.querySelector("#wa").value.replace(/[^\d+]/g,"");
+      const ok = form.querySelector("#ok").checked;
+      const err = form.querySelector("#err");
+      if(!nombre){ err.textContent="Escribe tu nombre para unirte."; return; }
+      if(wa.replace(/\D/g,"").length < 8){ err.textContent="Escribe un número de WhatsApp de al menos 8 dígitos."; return; }
+      if(!ok){ err.textContent="Marca la casilla de aceptación para unirte."; return; }
+      state.user = {id:newId(), nombre, wa, fecha:new Date().toISOString()};
+      save();
+      send({tipo:"registro", id:state.user.id, nombre, whatsapp:wa, consentimiento:"sí", origen:document.referrer||"directo"});
+      renderAll();
+    });
+    box.append(form);
+  } else {
+    const n = state.done.length;
+    box.append(el("h2",{},`Hola, ${state.user.nombre}`));
+    const c = el("p",{class:"count"}); c.textContent = n; c.append(el("small",{}," de 30 días completados"));
+    const ticks = el("div",{class:"ticks","aria-hidden":"true"});
+    for(let i=1;i<=30;i++){ const t = el("span",{class: state.done.includes(i)?"on":""}); t.style.setProperty("--c", stageOf(i).c); ticks.append(t); }
+    const go = el("button",{class:"btn full",type:"button"}, n===30 ? "Repasar el reto" : `Continuar con el día ${nextDay()}`);
+    go.onclick = () => openDay(n===30 ? 1 : nextDay());
+    box.append(c, ticks, go);
+  }
+}
+
+/* ───────── Calendario ───────── */
+function renderCalendar(){
+  const cal = document.getElementById("calendar");
+  cal.innerHTML = "";
+  const nd = state.user ? nextDay() : 1;
+  STAGES.forEach(s => {
+    const row = el("div",{class:"stage"}); row.style.setProperty("--c", s.c);
+    const head = el("div"); head.append(el("h3",{},s.name), el("p",{class:"range"},`Días ${s.from} a ${s.to}`));
+    const grid = el("div",{class:"days"});
+    for(let d=s.from; d<=s.to; d++){
+      const info = DAYS[d-1];
+      const done = state.done.includes(d);
+      let cls = "day" + (done?" done":"") + (info.alert?" alert":"") + (!done && d===nd && state.done.length<30 ? " next":"");
+      const b = el("button",{class:cls,type:"button","aria-label":`Día ${d}: ${info.t}${done?", completado":""}`});
+      b.append(el("span",{class:"n"},d), el("span",{class:"t"},info.t));
+      b.onclick = () => openDay(d);
+      grid.append(b);
+    }
+    row.append(head, grid);
+    cal.append(row);
+  });
+}
+
+/* ───────── Panel del día ───────── */
+const dlg = document.getElementById("dlg");
+let savedTimer;
+function flashSaved(){
+  const s = document.getElementById("savedMsg"); if(!s) return;
+  s.textContent = "✓ Guardado en este teléfono"; s.classList.add("on");
+  clearTimeout(savedTimer);
+  savedTimer = setTimeout(() => { s.classList.remove("on"); s.textContent = "Tus respuestas se guardan solas mientras escribes."; }, 1800);
+}
+function noteField(key, label, long){
+  const wrap = el("div");
+  const id = "f_"+key;
+  wrap.append(el("label",{class:"f",for:id},label));
+  const input = el("textarea",{id, rows: long ? 4 : 2});
+  input.value = state.notes[key] || "";
+  const grow = () => { input.style.height = "auto"; input.style.height = input.scrollHeight + "px"; };
+  input.addEventListener("input", grow); requestAnimationFrame(grow);
+  input.addEventListener("input", () => { state.notes[key] = input.value; save(); flashSaved(); });
+  wrap.append(input);
+  return wrap;
+}
+
+function openDay(d){
+  const info = DAYS[d-1], a = info.a, body = document.getElementById("dlgBody");
+  body.innerHTML = "";
+  const top = el("div",{class:"dlg-top"});
+  top.append(el("span",{},`Día ${d} de 30`));
+  const x = el("button",{class:"x",type:"button","aria-label":"Cerrar"},"×"); x.onclick = () => dlg.close();
+  top.append(x);
+  body.append(top, el("h2",{id:"dlgTitle"},info.t), el("p",{class:"explain"},info.x));
+
+  const task = el("div",{class:"task"});
+  task.append(el("h3",{},"Tu actividad"));
+
+  if(a.recall){
+    const prev = state.notes[a.recall];
+    task.append(el("p",{class:"recall"}, prev ? `Tu duda del día 1: «${prev}»` : "En el día 1 no escribiste una duda. Escribe la que tengas hoy."));
+  }
+
+  if(a.type==="quiz"){
+    a.qs.forEach((q,i) => {
+      const key = `d${d}_q${i}`;
+      const box = el("div",{class:"q"});
+      box.append(el("p",{},q.q));
+      const yn = el("div",{class:"yn"});
+      [["Sí",true],["No",false]].forEach(([lbl,val]) => {
+        const b = el("button",{type:"button","aria-pressed": String(state.notes[key]===String(val))},lbl);
+        b.onclick = () => { state.notes[key]=String(val); save(); flashSaved(); yn.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false")); b.setAttribute("aria-pressed","true"); };
+        yn.append(b);
+      });
+      const res = el("p",{class:"mark"}); res.dataset.ans = String(q.a); res.dataset.key = key; res.dataset.e = q.e;
+      box.append(yn,res); task.append(box);
+    });
+    const show = el("button",{class:"linkbtn",type:"button"},"Ver respuestas");
+    show.onclick = () => task.querySelectorAll(".mark").forEach(r => {
+      const mine = state.notes[r.dataset.key];
+      const right = mine === r.dataset.ans;
+      r.className = "mark " + (mine==null ? "" : right ? "ok" : "no");
+      r.textContent = `${r.dataset.ans==="true"?"Sí":"No"}. ${r.dataset.e}`;
+    });
+    task.append(show);
+  }
+
+  if(a.type==="match"){
+    a.pairs.forEach(([left,right],i) => {
+      const key = `d${d}_m${i}`;
+      const row = el("div",{class:"row"});
+      const lab = el("label",{for:"s_"+key},left);
+      const sel = el("select",{id:"s_"+key});
+      sel.append(el("option",{value:""},"Elige…"));
+      a.opts.forEach(o => { const op = el("option",{value:o},o); if(state.notes[key]===o) op.selected = true; sel.append(op); });
+      sel.onchange = () => { state.notes[key]=sel.value; save(); flashSaved(); };
+      const res = el("p",{class:"mark"}); res.dataset.right = right; res.dataset.key = key;
+      row.append(lab, sel); task.append(row, res);
+    });
+    const show = el("button",{class:"linkbtn",type:"button"},"Ver respuestas");
+    show.onclick = () => task.querySelectorAll(".mark").forEach(r => {
+      const right = state.notes[r.dataset.key] === r.dataset.right;
+      r.className = "mark " + (right ? "ok" : "no");
+      r.textContent = right ? "Correcto." : `La respuesta es: ${r.dataset.right}.`;
+    });
+    task.append(show);
+    if(a.note) task.append(el("p",{class:"alertbox"},a.note));
+  }
+
+  if(a.type==="interval"){
+    const row = el("div",{class:"row"});
+    const mk = (k,l) => { const w=el("div"); w.append(el("label",{class:"f",for:"t_"+k},l)); const i=el("input",{id:"t_"+k,type:"time"}); i.value=state.notes[`d${d}_${k}`]||""; i.oninput=()=>{state.notes[`d${d}_${k}`]=i.value; save(); calc(); flashSaved();}; w.append(i); return w; };
+    row.append(mk("cena","Termino de cenar"), mk("cama","Me acuesto"));
+    const out = el("p",{class:"interval","aria-live":"polite"});
+    const calc = () => {
+      const c = state.notes[`d${d}_cena`], m = state.notes[`d${d}_cama`];
+      if(!c||!m){ out.textContent=""; return; }
+      let mins = (+m.slice(0,2)*60 + +m.slice(3)) - (+c.slice(0,2)*60 + +c.slice(3));
+      if(mins<0) mins += 1440;
+      const h = Math.floor(mins/60), r = mins%60;
+      const txt = `Entre cenar y acostarte pasan ${h} h${r?` ${r} min`:""}.`;
+      out.textContent = txt; state.notes[`d${d}_intervalo`] = txt; save();
+    };
+    task.append(row, out); calc();
+  }
+
+  (a.fields||[]).forEach((label,i) => task.append(noteField(`d${d}_${i}`, label, a.long)));
+  if(a.hint) task.append(el("p",{class:"hint"},a.hint));
+  if(a.ref){
+    const r = el("p",{class:"reveal"},a.ref);
+    const b = el("button",{class:"linkbtn",type:"button"},"Ver un ejemplo de respuesta");
+    b.onclick = () => r.classList.toggle("show");
+    task.append(b, r);
+  }
+  task.append(el("p",{class:"saved",id:"savedMsg","aria-live":"polite"},"Tus respuestas se guardan solas mientras escribes."));
+  body.append(task);
+
+  if(a.cita){
+    const c = el("a",{class:"btn ghost",href:CONFIG.cita,target:"_blank",rel:"noopener"},"Pedir una cita");
+    c.style.marginTop = "1.2rem";
+    body.append(c);
+  }
+
+  const foot = el("div",{class:"dlg-foot"});
+  const done = state.done.includes(d);
+  const mark = el("button",{class:"btn",type:"button"}, done ? "Desmarcar día" : "Marcar día completado");
+  mark.onclick = () => toggleDone(d);
+  foot.append(mark);
+  if(d<30){ const nx = el("button",{class:"btn ghost",type:"button"},`Ir al día ${d+1}`); nx.onclick = () => openDay(d+1); foot.append(nx); }
+  body.append(foot);
+  if(!state.user) body.append(el("p",{class:"hint"},"Para marcar tu avance, únete al reto con tu nombre y tu WhatsApp."));
+
+  if(!dlg.open) dlg.showModal();
+  body.scrollTop = 0;
+}
+
+function toggleDone(d){
+  if(!state.user){
+    dlg.close();
+    const j = document.getElementById("join");
+    j.scrollIntoView({behavior:"smooth",block:"center"});
+    const n = document.getElementById("nombre"); if(n) setTimeout(()=>n.focus(),400);
+    return;
+  }
+  const i = state.done.indexOf(d);
+  if(i>=0) state.done.splice(i,1); else state.done.push(d);
+  state.done.sort((a,b)=>a-b); save();
+  send({tipo:"avance", id:state.user.id, dia:d, estado: i>=0 ? "desmarcado" : "completado"});
+  renderAll();
+  if(i<0 && d<30) openDay(d+1); else openDay(d);
+}
+
+/* ───────── Ficha ───────── */
+function fichaData(){
+  return STAGES.map(s => {
+    const items = [];
+    for(let d=s.from; d<=s.to; d++){
+      const a = DAYS[d-1].a;
+      (a.fields||[]).forEach((label,i) => items.push([`Día ${d}. ${label}`, state.notes[`d${d}_${i}`]||""]));
+      if(a.type==="interval") items.push([`Día ${d}. Mi intervalo`, state.notes[`d${d}_intervalo`]||""]);
+    }
+    return {name:s.name, range:`Días ${s.from} a ${s.to}`, items};
+  });
+}
+function buildFicha(){
+  const f = document.getElementById("ficha"); f.innerHTML = "";
+  const fh = el("div",{class:"fh"});
+  const logo = document.querySelector(".brand img").cloneNode();
+  const tx = el("div"); tx.append(el("h1",{},"30 días para entender tu reflujo"), el("p",{},`Ficha de ${state.user?state.user.nombre:"participante"} con el Dr. Óscar Palma. ${state.done.length} de 30 días completados.`));
+  fh.append(logo, tx); f.append(fh);
+  fichaData().forEach((s,i) => {
+    const h = el("h2",{},`${s.name} (${s.range})`); h.style.setProperty("--c", STAGES[i].c); f.append(h);
+    const dl = el("dl");
+    s.items.forEach(([k,v]) => dl.append(el("dt",{},k), el("dd",{},v)));
+    f.append(dl);
+  });
+  f.append(el("p",{class:"safe"},"Ante dolor de pecho nuevo o intenso, vómito con sangre o heces negras y pegajosas, busca atención de urgencia. Ante dificultad para tragar, vómitos persistentes o pérdida de peso sin proponértelo, pide una valoración pronta. Este registro es educativo y no sustituye una consulta."));
+}
+document.getElementById("waBtn").onclick = () => {
+  let t = "*30 días para entender tu reflujo* · Dr. Óscar Palma\n";
+  fichaData().forEach(s => {
+    const filled = s.items.filter(([,v]) => v.trim());
+    if(filled.length){ t += `\n*${s.name}*\n`; filled.forEach(([k,v]) => t += `${k}: ${v}\n`); }
+  });
+  window.open("https://wa.me/?text="+encodeURIComponent(t), "_blank");
+};
+
+/* ───────── Inicio ───────── */
+document.getElementById("citaHead").href = CONFIG.cita;
+document.getElementById("citaFoot").href = CONFIG.cita;
+const inApp = /Instagram|FBAN|FBAV/i.test(navigator.userAgent);
+if(inApp){ document.getElementById("tip").style.display = "block"; document.getElementById("pdfTip").hidden = false; }
+dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close(); });
+function renderAll(){ renderJoin(); renderCalendar(); }
+renderAll();
+const m = location.hash.match(/^#dia(\d{1,2})$/); if(m && +m[1]>=1 && +m[1]<=30) openDay(+m[1]);
+</script>
+</body>
+</html>
